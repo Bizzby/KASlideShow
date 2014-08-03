@@ -132,6 +132,14 @@ typedef NS_ENUM(NSInteger, KASlideShowSlideMode) {
     [self addImagesFromResources:names];
 }
 
+- (void) removeAllImages
+{
+    [self.images removeAllObjects];
+    _currentIndex = 0;
+    _topImageView.image = nil;
+    _bottomImageView.image = nil;
+}
+
 - (void) start
 {
     _doStop = NO;
